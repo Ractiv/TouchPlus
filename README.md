@@ -9,7 +9,7 @@ In each case, the viewer uses basic libraries from OpenCV to display the video s
 <b>For windows</b>
 The SDK uses DirectShow for the video streams. Camera control is based on DLLs provided by Etron for low level control (exposure time, global gain, color balance etc). 
 
-<b>For OS X and Linux<b>
+<b>For OS X and Linux</b>
 In this case, the library used to stream is libUVC (see https://github.com/ktossell/libuvc).
 Because Etron did not provide a library for these architectures, the control codes were "discovered" using the USB packets in the Win32 enviroment. These USB transfers are replicated using libUSB-1.0 (see http://www.libusb.org/wiki/libusb-1.0)
 
