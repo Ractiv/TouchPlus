@@ -1,0 +1,60 @@
+﻿Build started 2/5/2015 1:16:54 PM.
+     1>Project "C:\Users\Amanda\Documents\Visual Studio 2013\Projects\TouchPlusDll3\TouchPlusDll3\TouchPlusDll3.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (TouchPlusDll3.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Amanda\Documents\Visual Studio 2013\Projects\TouchPlusDll3\DirectShow\Include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D TOUCHPLUSDLL3_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\TouchPlus.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt TouchPlus.cpp
+         TouchPlus.cpp
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(1): warning C4081: expected 'identifier'; found 'string'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(24): warning C4273: 'TouchFuncs::MyTouchFuncs::isCameraPresent' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(27) : see previous definition of 'isCameraPresent'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(30): warning C4101: 'name' : unreferenced local variable
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(64): warning C4101: 'nCount1' : unreferenced local variable
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(85): warning C4273: 'TouchFuncs::MyTouchFuncs::do_software_unlock' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(26) : see previous definition of 'do_software_unlock'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(101): warning C4273: 'TouchFuncs::MyTouchFuncs::setExposureTime' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(28) : see previous definition of 'setExposureTime'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(106): warning C4273: 'TouchFuncs::MyTouchFuncs::getExposureTime' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(29) : see previous definition of 'getExposureTime'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(111): warning C4273: 'TouchFuncs::MyTouchFuncs::setGlobalGain' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(30) : see previous definition of 'setGlobalGain'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(115): warning C4273: 'TouchFuncs::MyTouchFuncs::getGlobalGain' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(31) : see previous definition of 'getGlobalGain'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(121): warning C4273: 'TouchFuncs::MyTouchFuncs::turnLEDsOn' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(32) : see previous definition of 'turnLEDsOn'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(130): warning C4273: 'TouchFuncs::MyTouchFuncs::turnLEDsOff' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(33) : see previous definition of 'turnLEDsOff'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(140): warning C4273: 'TouchFuncs::MyTouchFuncs::getAccelerometerValues' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(34) : see previous definition of 'getAccelerometerValues'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(145): warning C4273: 'TouchFuncs::MyTouchFuncs::setColorGains' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(35) : see previous definition of 'setColorGains'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(149): warning C4273: 'TouchFuncs::MyTouchFuncs::getColorGains' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(36) : see previous definition of 'getColorGains'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(153): warning C4273: 'TouchFuncs::MyTouchFuncs::enableAutoExposure' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(37) : see previous definition of 'enableAutoExposure'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(157): warning C4273: 'TouchFuncs::MyTouchFuncs::disableAutoExposure' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(38) : see previous definition of 'disableAutoExposure'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(161): warning C4273: 'TouchFuncs::MyTouchFuncs::enableAutoWhiteBalance' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(39) : see previous definition of 'enableAutoWhiteBalance'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(165): warning C4273: 'TouchFuncs::MyTouchFuncs::disableAutoWhiteBalance' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(40) : see previous definition of 'disableAutoWhiteBalance'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(170): warning C4273: 'TouchFuncs::MyTouchFuncs::startVideoStream' : inconsistent dll linkage
+                 c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.h(41) : see previous definition of 'startVideoStream'
+     1>c:\users\amanda\documents\visual studio 2013\projects\touchplusdll3\touchplusdll3\touchplus.cpp(201): warning C4715: 'TouchFuncs::MyTouchFuncs::startVideoStream' : not all control paths return a value
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Amanda\Documents\Visual Studio 2013\Projects\TouchPlusDll3\DirectShow\Include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D TOUCHPLUSDLL3_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt dllmain.cpp
+         Skipping... (no relevant changes detected)
+         dllmain.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Amanda\Documents\Visual Studio 2013\Projects\TouchPlusDll3\Debug\TouchPlus.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Amanda\Documents\Visual Studio 2013\Projects\TouchPlusDll3\Debug\TouchPlus.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Amanda\Documents\Visual Studio 2013\Projects\TouchPlusDll3\Debug\TouchPlus.lib" /MACHINE:X86 /DLL Debug\CameraDS.obj
+         Debug\dllmain.obj
+         Debug\stdafx.obj
+         Debug\TouchPlus.obj
+         eSPAEAWBCtrl.lib
+         eSPDI.lib
+         EtronDI.lib
+            Creating library C:\Users\Amanda\Documents\Visual Studio 2013\Projects\TouchPlusDll3\Debug\TouchPlus.lib and object C:\Users\Amanda\Documents\Visual Studio 2013\Projects\TouchPlusDll3\Debug\TouchPlus.exp
+         TouchPlusDll3.vcxproj -> C:\Users\Amanda\Documents\Visual Studio 2013\Projects\TouchPlusDll3\Debug\TouchPlus.dll
+     1>Done Building Project "C:\Users\Amanda\Documents\Visual Studio 2013\Projects\TouchPlusDll3\TouchPlusDll3\TouchPlusDll3.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.52
