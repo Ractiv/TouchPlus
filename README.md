@@ -11,7 +11,7 @@ The SDK uses DirectShow for the video streams. Camera control is based on DLLs p
 
 <b>Compiling Instructions for Windows</b>
 Thanks for Andrew Kirkovski for finding this issue:
-The project was build in VS 2013 and needs the following change in winnt.h to successfully compile:
+The project was build in VS 2013 and needs the following change in winnt.h (around line 340) to successfully compile:
 
 from:
 <pre>
