@@ -367,6 +367,8 @@ int  setColorGains(float red, float green, float blue){
     
     unsigned char data[4];
     read_ADDR_85(dev_handle);
+
+    //set red
     int toSet = (red *64);
     if (toSet<0)toSet =0;
     if (toSet>255)toSet = 255;
@@ -377,8 +379,19 @@ int  setColorGains(float red, float green, float blue){
     write_ADDR_01(dev_handle,data);
     read_ADDR_85(dev_handle);
     read_ADDR_81(dev_handle,data);
+
+    data[0] = 0x02;
+    data[1] = 0xf2;
+    data[2] = 0x8c;
+    data[3] = (unsigned char)toSet;
+     read_ADDR_85(dev_handle);
+    write_ADDR_01(dev_handle,data);
+    read_ADDR_85(dev_handle);
+    read_ADDR_81(dev_handle,data);
     
  
+
+ /// green
     int toSet2 = (green *64);
     if (toSet2<0)toSet2 =0;
     if (toSet2>255)toSet2 = 255;
@@ -386,17 +399,72 @@ int  setColorGains(float red, float green, float blue){
     data[1] = 0xf1;
     data[2] = 0xcd;
     data[3] = (unsigned char)toSet2;
+     read_ADDR_85(dev_handle);
      write_ADDR_01(dev_handle,data);
     read_ADDR_85(dev_handle);
     read_ADDR_81(dev_handle,data);
+
+    data[0] = 0x02;
+    data[1] = 0xf2;
+    data[2] = 0x8d;
+    data[3] = (unsigned char)toSet2;
+     read_ADDR_85(dev_handle);
+     write_ADDR_01(dev_handle,data);
+    read_ADDR_85(dev_handle);
+    read_ADDR_81(dev_handle,data);
+
+    data[0] = 0x02;
+    data[1] = 0xf1;
+    data[2] = 0xce;
+    data[3] = (unsigned char)toSet2;
+     read_ADDR_85(dev_handle);
+     write_ADDR_01(dev_handle,data);
+    read_ADDR_85(dev_handle);
+    read_ADDR_81(dev_handle,data);
+
+    data[0] = 0x02;
+    data[1] = 0xf2;
+    data[2] = 0x8e;
+    data[3] = (unsigned char)toSet2;
+     read_ADDR_85(dev_handle);
+     write_ADDR_01(dev_handle,data);
+    read_ADDR_85(dev_handle);
+    read_ADDR_81(dev_handle,data);
+
+
+
+
+     toSet2 = (green *64);
+    if (toSet2<0)toSet2 =0;
+    if (toSet2>255)toSet2 = 255;
+    data[0] = 0x02;
+    data[1] = 0xf1;
+    data[2] = 0xce;
+    data[3] = (unsigned char)toSet2;
+     read_ADDR_85(dev_handle);
+     write_ADDR_01(dev_handle,data);
+    read_ADDR_85(dev_handle);
+    read_ADDR_81(dev_handle,data);
+
     
+    //blue side 1
     int toSet3 = (blue *64);
     if (toSet3<0)toSet3 =0;
     if (toSet3>255)toSet3 = 255;
     data[0] = 0x02;
     data[1] = 0xf1;
-    data[2] = 0xce;
+    data[2] = 0xcf;
     data[3] = (unsigned char)toSet3;
+     read_ADDR_85(dev_handle);
+    write_ADDR_01(dev_handle,data);
+    read_ADDR_85(dev_handle);
+    read_ADDR_81(dev_handle,data);
+
+    data[0] = 0x02;
+    data[1] = 0xf2;
+    data[2] = 0x8f;
+    data[3] = (unsigned char)toSet3;
+     read_ADDR_85(dev_handle);
     write_ADDR_01(dev_handle,data);
     read_ADDR_85(dev_handle);
     read_ADDR_81(dev_handle,data);
@@ -435,7 +503,7 @@ int     getColorGains(float *red, float *green, float *blue){
     read_ADDR_85(dev_handle);
     data[0] = 0x82;
     data[1] = 0xf1;
-    data[2] = 0xce;
+    data[2] = 0xcf;
     data[3] = 0X00;
     write_ADDR_01(dev_handle,data);
     read_ADDR_85(dev_handle);
@@ -448,9 +516,7 @@ int     getColorGains(float *red, float *green, float *blue){
 
 int    turnLEDsOff()
 {
-    int r = 0;
-    
-    //libusb_transfer transfer ={0};
+
     unsigned char bmRequestType_set = 0x21;
     unsigned char bmRequestType_get = 0xa1;
     unsigned char GET_CUR = 0x85;
@@ -458,61 +524,30 @@ int    turnLEDsOff()
     unsigned short wValue =0x0300;
     unsigned short wIndex = 0x0400;
     unsigned char data[5];
-
-
-    data[0] = 0x00;
-    data[1] = 0x00;
-    data[2] = 0x00;
-    data[3] = 0x00;
-    
-    r= libusb_control_transfer(dev_handle,bmRequestType_get,GET_CUR,wValue,wIndex,data,2,10000 );
-
-    cout << "r = "<<r<<endl;
-    data[0]=0x02;
+ 
+    read_ADDR_85(dev_handle);
+    data[0]=0x82;
     data[1]=0xf0;
     data[2]=0x17;
     data[3]=0x00;
-    
-    r= libusb_control_transfer(dev_handle,bmRequestType_set,SET_CUR,wValue,wIndex,data,4,10000 );
+    write_ADDR_01(dev_handle,data);
 
-    cout << "r = "<<r<<endl;
-    data[0] = 0x00;
-    data[1] = 0x00;
-    data[2] = 0x00;
-    data[3] = 0x00;
-     
-    r= libusb_control_transfer(dev_handle,bmRequestType_get,GET_CUR,wValue,wIndex,data,2,10000 );
-    cout << "r = "<<r<<endl;
-    
-    data[0]=0x00;
-    data[1]=0x00;
-    data[2]=0x00;
-    data[3]=0x00;
-    GET_CUR=0x81;
+    read_ADDR_85(dev_handle);
+    read_ADDR_81(dev_handle,data);
+    read_ADDR_85(dev_handle);
 
-    r= libusb_control_transfer(dev_handle,bmRequestType_get,GET_CUR,wValue,wIndex,data,4,10000 );
-
-    cout << "r = "<<r<<endl;
-
-    
-        data[0] = 0x00;
-    data[1] = 0x00;
-    data[2] = 0x00;
-    data[3] = 0x00;
-    GET_CUR = 0x85;
-    r= libusb_control_transfer(dev_handle,bmRequestType_get,GET_CUR,wValue,wIndex,data,2,10000 );
-    cout << "r = "<<r<<endl;
-    
     data[0]=0x02;
-    data[1]=0x00;
+    data[1]=0xf0;
     data[2]=0x17;
-    data[3]=0x00;
+    data[3]=0x15;
     
-    r= libusb_control_transfer(dev_handle,bmRequestType_set,SET_CUR,wValue,wIndex,data,4,10000 );
+    write_ADDR_01(dev_handle,data);
+    read_ADDR_85(dev_handle);
+    read_ADDR_81(dev_handle,data);
+
     return 0;
 }
 int     turnLEDsOn(){
-    int r = 0;
     //libusb_transfer transfer ={0};
     unsigned char bmRequestType_set = 0x21;
     unsigned char bmRequestType_get = 0xa1;
@@ -522,62 +557,25 @@ int     turnLEDsOn(){
     unsigned short wIndex = 0x0400;
     unsigned char data[5];
     
-    
-    data[0] = 0x00;
-    data[1] = 0x00;
-    data[2] = 0x00;
-    data[3] = 0x00;
-    
-    r= libusb_control_transfer(dev_handle,bmRequestType_get,GET_CUR,wValue,wIndex,data,2,10000 );
+    read_ADDR_85(dev_handle);   
 
-    cout << "r = "<<r<<endl;
     data[0]=0x82;
     data[1]=0xf0;
     data[2]=0x17;
     data[3]=0x00;
     
-    r= libusb_control_transfer(dev_handle,bmRequestType_set,SET_CUR,wValue,wIndex,data,4,10000 );
-
-
-    cout << "r = "<<r<<endl;
-    data[0] = 0x00;
-    data[1] = 0x00;
-    data[2] = 0x00;
-    data[3] = 0x00;
-    
-    r= libusb_control_transfer(dev_handle,bmRequestType_get,GET_CUR,wValue,wIndex,data,2,10000 );
-
-
-
-    cout << "r = "<<r<<endl;
-    
-    //////////
-    data[0] = 0x00;
-    data[1] = 0x00;
-    data[2] = 0x00;
-    data[3] = 0x00;
-    GET_CUR = 0x81;
-    r= libusb_control_transfer(dev_handle,bmRequestType_get,GET_CUR,wValue,wIndex,data,4,10000 );
-    cout << "r = "<<r<<endl;
-    
-    data[0] = 0x00;
-    data[1] = 0x00;
-    data[2] = 0x00;
-    data[3] = 0x00;
-    GET_CUR = 0x85;
-    r= libusb_control_transfer(dev_handle,bmRequestType_get,GET_CUR,wValue,wIndex,data,2,10000 );
-
-
-
-    cout << "r = "<<r<<endl;
+    write_ADDR_01(dev_handle,data);
+    read_ADDR_85(dev_handle);
+    read_ADDR_81(dev_handle,data);
     
     data[0]=0x02;
-    data[1]=0x00;
+    data[1]=0xf0;
     data[2]=0x17;
-    data[3]=0x00;
+    data[3]=0x1D;
     
-    r= libusb_control_transfer(dev_handle,bmRequestType_set,SET_CUR,wValue,wIndex,data,4,10000 );
-    
+    write_ADDR_01(dev_handle,data);
+    read_ADDR_85(dev_handle);
+    read_ADDR_81(dev_handle,data);
 
     return 0;
 }
@@ -1329,6 +1327,7 @@ int do_software_unlock(){
     data[3]=0x00;
     GET_CUR=0x81;
     r= libusb_control_transfer(dev_handle,bmRequestType_get,GET_CUR,wValue,wIndex,data,4,0 );
+
     fprintf(stderr,"Camera unlocked\n");
     /*
      r = libusb_release_interface(dev_handle, 0); //release the claimed interface
